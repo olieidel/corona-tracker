@@ -1,0 +1,14 @@
+<div class="w-full h-screen">
+  <div id="map" class="absolute top-0 w-full h-screen" data-controller="map"></div>
+  <div class="z-10 absolute bottom-0 pb-4 w-full opacity-75 bg-black text-white">
+    <div class="text-center mt-4">
+      <h1 class="text-3xl">Daten beitragen</h1>
+    </div>
+    <div id="form" class="mt-4">
+      <%= render "questionnaires/form", questionnaire: @questionnaire %>
+    </div>
+    <div id="success" class="mt-4 mx-auto max-w-lg" style="display:none">
+      Danke!
+    </div>
+  </div>
+</div>

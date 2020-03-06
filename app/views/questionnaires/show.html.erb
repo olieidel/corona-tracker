@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Healthy:</strong>
+  <%= @questionnaire.healthy %>
+</p>
+
+<p>
+  <strong>Fever:</strong>
+  <%= @questionnaire.fever %>
+</p>
+
+<p>
+  <strong>Cough:</strong>
+  <%= @questionnaire.cough %>
+</p>
+
+<p>
+  <strong>Browser location:</strong>
+  <%= @questionnaire.browser_location_id %>
+</p>
+
+<%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
+<%= link_to 'Back', questionnaires_path %>
