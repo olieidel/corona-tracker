@@ -81,5 +81,7 @@ test:
 production:
   <<: *default
   database: corona_production
+  # https://stackoverflow.com/a/52427815
+  url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
   username: corona
   password: <%= ENV['CORONA_DATABASE_PASSWORD'] %>
