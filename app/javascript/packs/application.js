@@ -25,5 +25,4 @@ import "controllers";
 // mapbox css
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-
 global.$ = require('jquery');
