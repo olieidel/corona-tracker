@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ['map'];
 
   connect() {
-    this.renderMap();
+    // this.renderMap();
   }
 
   renderMap() {

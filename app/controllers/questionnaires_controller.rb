@@ -15,7 +15,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/new
   def new
     @questionnaire = Questionnaire.new
-    @questionnaire.build_browser_location
+    # @questionnaire.build_browser_location
   end
 
   # GET /questionnaires/1/edit
@@ -26,6 +26,7 @@ class QuestionnairesController < ApplicationController
   # POST /questionnaires.json
   def create
     @questionnaire = Questionnaire.new(questionnaire_params)
+    @questionnaire.client_uuid = cookies.encrypted[:client_uuid]
 
     respond_to do |format|
       if @questionnaire.save
@@ -71,7 +72,7 @@ class QuestionnairesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def questionnaire_params
-      params.require(:questionnaire).permit(:healthy, :fever, :cough,
-                                            browser_location_attributes: [:id, :lon, :lat, :accuracy])
+      params.require(:questionnaire).permit(:healthy, :tested, :fever, :cough, :other_symptoms,
+                                            :latitude, :longitude, :accuracy)
     end
 end

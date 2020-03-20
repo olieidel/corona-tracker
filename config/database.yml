@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgis
+  adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -29,10 +29,10 @@ development: &development
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  username: docker
+  username: postgres
 
   # The password associated with the postgres role (username).
-  password: docker
+  # password: docker
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -82,6 +82,7 @@ production:
   <<: *default
   database: corona_production
   # https://stackoverflow.com/a/52427815
-  url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
+  # url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
+  url: <%= ENV['DATABASE_URL'] %>
   username: corona
   password: <%= ENV['CORONA_DATABASE_PASSWORD'] %>

@@ -1,9 +1,22 @@
 <div class="w-full h-screen">
   <div id="map" class="absolute top-0 w-full h-screen" data-controller="map"></div>
-  <div class="z-10 absolute bottom-0 pb-4 w-full opacity-75 bg-black text-white">
-    <div class="text-center mt-4">
-      <h1 class="text-3xl">Daten beitragen</h1>
-    </div>
+  <div class="map-overlay z-10 absolute top-0 right-0 p-4 w-1/3 text-black rounded rounded-t-none rounded-r-none shadow-xl" data-controller="questionnaire">
+    <header class="text-center">
+      <h1 class="text-2xl tracking-wider leading-tight">COVID-19 Tracker</h1>
+    </header>
+
+    <section class="leading-tight mt-8" data-target="questionnaire.introduction">
+      <h3 class="uppercase text-base text-black tracking-wider">Worum geht's?</h3>
+      <section class="text-sm text-gray-800">
+        <p class="mt-1">Bei neu erkrankten Menschen kann es bis zu 10 Tage dauern, bis die Tests ausgewertet und die Ergebnisse beim RKI eingegangen sind.</p>
+        <p class="mt-1">Wir brauchen aber Daten in Echtzeit, um schnell sinnvolle Gegenmaßnahmen einleiten zu können.</p>
+      </section>
+      <h3 class="mt-6 uppercase text-base text-black tracking-wider">Dein Beitrag</h3>
+      <section class="text-sm text-gray-800">
+        <p class="mt-1">Du kannst helfen, indem Du angibst, wie es dir geht und wo du bist.</p>
+        <p class="mt-1">Deine Ortsdaten werden übertragen und auf einem Radius von 10km anonymisiert.</p>
+      </section>
+    </section>
     <div id="form" class="mt-4">
       <%= render "questionnaires/form", questionnaire: @questionnaire %>
     </div>

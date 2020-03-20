@@ -15,4 +15,24 @@
   }
 }
 
+.select-button {
+  @apply h-16 w-full p-2 border border-gray-600 rounded;
+
+  &:hover {
+    @apply bg-gray-200;
+  }
+}
+
+.map-overlay {
+  @apply bg-gray-200;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .map-overlay {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
 @tailwind utilities;
