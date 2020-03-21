@@ -10,6 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+
+    <% if Rails.env.production? %>
+      <%= render "shared/analytics" %>
+    <% end %>
   </head>
 
   <body class="bg-black">
