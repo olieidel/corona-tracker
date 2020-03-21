@@ -141,87 +141,7 @@ export default class extends Controller {
         'waterway-label'
       );
 
-      // map.addLayer({
-      //   id: 'clusters',
-      //   type: 'circle',
-      //   source: 'earthquakes',
-      //   filter: ['has', 'point_count'],
-      //   paint: {
-      //     // Use step expressions (https:docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-      //     // with three steps to implement three types of circles:
-      //     //   * Blue, 20px circles when point count is less than 100
-      //     //   * Yellow, 30px circles when point count is between 100 and 750
-      //     //   * Pink, 40px circles when point count is greater than or equal to 750
-      //     'circle-color': [
-      //       'step',
-      //       ['get', 'point_count'],
-      //       '#51bbd6',
-      //       100,
-      //       '#f1f075',
-      //       750,
-      //       '#f28cb1'
-      //     ],
-      //     'circle-radius': [
-      //       'step',
-      //       ['get', 'point_count'],
-      //       20,
-      //       100,
-      //       30,
-      //       750,
-      //       40
-      //     ]
-      //   }
-      // });
-
-      // map.addLayer({
-      //   id: 'cluster-count',
-      //   type: 'symbol',
-      //   source: 'earthquakes',
-      //   filter: ['has', 'point_count'],
-      //   layout: {
-      //     'text-field': '{point_count_abbreviated}',
-      //     'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-      //     'text-size': 12
-      //   }
-      // });
-
-      // map.addLayer({
-      //   id: 'unclustered-point',
-      //   type: 'circle',
-      //   source: 'earthquakes',
-      //   filter: ['!', ['has', 'point_count']],
-      //   paint: {
-      //     'circle-color': '#11b4da',
-      //     'circle-radius': 8,
-      //     'circle-stroke-width': 1,
-      //     'circle-stroke-color': '#fff'
-      //   }
-      // });
-
-      // // inspect a cluster on click
-      // map.on('click', 'clusters', function(e) {
-      //   var features = map.queryRenderedFeatures(e.point, {
-      //     layers: ['clusters']
-      //   });
-      //   var clusterId = features[0].properties.cluster_id;
-      //   map.getSource('earthquakes').getClusterExpansionZoom(
-      //     clusterId,
-      //     function(err, zoom) {
-      //       if (err) return;
-
-      //       map.easeTo({
-      //         center: features[0].geometry.coordinates,
-      //         zoom: zoom
-      //       });
-      //     }
-      //   );
-      // });
-
-      // // When a click event occurs on a feature in
-      // // the unclustered-point layer, open a popup at
-      // // the location of the feature, with
-      // // description HTML from its properties.
-      map.on('click', 'earthquakes-point', function(e) {
+      map.on('click', 'questionnaire-points', function(e) {
 
         var coordinates = e.features[0].geometry.coordinates.slice();
         var healthyStr = e.features[0].properties.healthy ? 'Gesunde Person' : 'Kranke Person';
@@ -250,16 +170,10 @@ export default class extends Controller {
           .addTo(map);
       });
 
-      // map.on('mouseenter', 'clusters', function() {
-      //   map.getCanvas().style.cursor = 'pointer';
-      // });
-      // map.on('mouseleave', 'clusters', function() {
-      //   map.getCanvas().style.cursor = '';
-      // });
-      map.on('mouseenter', 'earthquakes-point', function() {
+      map.on('mouseenter', 'questionnaire-points', function() {
         map.getCanvas().style.cursor = 'pointer';
       });
-      map.on('mouseleave', 'earthquakes-point', function() {
+      map.on('mouseleave', 'questionnaire-points', function() {
         map.getCanvas().style.cursor = '';
       });
     });
