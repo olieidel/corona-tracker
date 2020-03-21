@@ -58,6 +58,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # https://github.com/mperham/sidekiq/
 gem 'sidekiq', '~> 6.0', '>= 6.0.5'
 
+# Scout Monitoring
+gem 'scout', '~> 5.9', '>= 5.9.13'
+
 # Maybe a better API for storing lat lng locations and doing nearby queries?
 # rubygeocoder.com
 gem 'geocoder', '~> 1.6', '>= 1.6.2'
