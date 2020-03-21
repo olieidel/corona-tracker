@@ -237,10 +237,15 @@ export default class extends Controller {
 
         new mapboxgl.Popup()
           .setLngLat(coordinates)
-          .setHTML('<b>' + healthyStr + '</b><br><i>(nicht genauer Ort)</i>' +
-                   '<br>Fieber: ' + fever +
-                   '<br>Husten: ' + cough +
-                   '<br>Getestet: ' + tested)
+          .setHTML(`<aside class="leading-tight">
+<h4 class="text-base text-black font-medium tracking-wider uppercase">${healthyStr}</h4>
+<ul class="mt-1 text-sm text-gray-800">
+<li>Fieber: ${fever}</li>
+<li>Husten: ${cough}</li>
+<li>Getestet: ${tested}</li>
+</ul>
+<p class="mt-2 text-gray-600 text-xs tracking-wide">Ort auf 2km anonymisiert</p>
+</aside>`)
           .addTo(map);
       });
 
