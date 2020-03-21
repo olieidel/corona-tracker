@@ -19,34 +19,37 @@
     </div>
   </section>
 
-  <section class="mx-auto max-w-lg" data-target="questionnaire.sickSelector" style="display:none">
-    <div>
+  <section class="mx-auto max-w-lg leading-tight" data-target="questionnaire.sickSelector" style="display:none">
+    <h3 class="mt-6 uppercase text-base text-black tracking-wider">Ich bin krank.</h3>
+    <div class="mt-2 text-sm text-gray-800">
       <%= form.check_box :fever, data: { target: "questionnaire.fever" } %>
-      <%= form.label :fever, "Ich habe (auch) Fieber", class: "ml-1" %>
+      <%= form.label :fever, "Ich habe Fieber.", class: "ml-1" %>
     </div>
-    <div>
+    <div class="mt-2 text-sm text-gray-800">
       <%= form.check_box :cough, data: { target: "questionnaire.cough" } %>
-      <%= form.label :cough, "Ich habe (auch) Husten", class: "ml-1" %>
+      <%= form.label :cough, "Ich habe Husten.", class: "ml-1" %>
     </div>
-    <div>
-      <%= form.text_field :other_symptoms, placeholder: "Andere Symptome" %>
+    <div class="mt-4 text-sm text-gray-800">
+      <%= form.label :other_symptoms, "Falls du weitere Symptome hast, gib sie hier ein:", class: "" %>
+      <%= form.text_field :other_symptoms, placeholder: "Weitere Symptome hier eintragen", class: "mt-1 w-full px-3 py-2 text-gray-800 border border-gray-500 rounded" %>
     </div>
-    <div class="text-sm leading-tight">
-      <%= form.check_box :tested %>
-      <%= form.label :tested, "Ich habe auch einen COVID-19 Test gemacht, der das bestätigt (optional)", class: "ml-1" %>
+    <div class="mt-4 text-sm">
+      <%= form.check_box :tested, id: "check_box_tested_sick" %>
+      <%= form.label :tested, "Optional: Ich habe einen COVID-19 Test gemacht und er ist positiv (krank).", class: "ml-1 text-gray-800", for: "check_box_tested_sick" %>
     </div>
-    <div class="mt-2">
-      <button class="select-button" data-target="questionnaire.submitButtonSick" data-action="questionnaire#confirmSubmit">Abschicken</button>
+    <div class="mt-4">
+      <%= form.submit "Abschicken", class: "select-button", data: { target: "questionnaire.submitButtonSick", action: "questionnaire#confirmSubmit" } %>
     </div>
   </section>
 
-  <section class="mx-auto max-w-lg" data-target="questionnaire.locationHint" style="display:none">
-    <div class="text-sm leading-tight">
-      <%= form.check_box :tested %>
-      <%= form.label :tested, "Ich habe auch einen COVID-19 Test gemacht, der das bestätigt (optional)", class: "ml-1" %>
+  <section class="mx-auto max-w-lg leading-tight" data-target="questionnaire.locationHint" style="display:none">
+    <h3 class="mt-6 uppercase text-base text-black tracking-wider">Ich bin gesund.</h3>
+    <div class="mt-2 text-sm">
+      <%= form.check_box :tested, id: "check_box_tested_healthy" %>
+      <%= form.label :tested, "Optional: Ich habe einen COVID-19 Test gemacht und er ist negativ (gesund).", class: "ml-1 text-gray-800", for: "check_box_tested_healthy" %>
     </div>
-    <div class="mt-2">
-      <button class="select-button" data-target="questionnaire.submitButtonHealthy" data-action="questionnaire#confirmSubmit">Abschicken</button>
+    <div class="mt-4">
+      <%= form.submit "Abschicken", class: "select-button", data: { target: "questionnaire.submitButtonHealthy", action: "questionnaire#confirmSubmit" } %>
     </div>
   </section>
 

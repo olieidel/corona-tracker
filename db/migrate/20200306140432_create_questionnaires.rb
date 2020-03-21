@@ -6,14 +6,12 @@ class CreateQuestionnaires < ActiveRecord::Migration[6.0]
       t.boolean :tested,                           null: false
       t.boolean :fever,                            null: false
       t.boolean :cough,                            null: false
-      t.text :other_symptoms,                      null: true
+      t.string :other_symptoms,                    null: false
 
       t.float :latitude,                           null: false
       t.float :longitude,                          null: false
       t.text   :address,                           null: true
       t.float :accuracy,                           null: false
-
-      # t.references :browser_location, type: :uuid, null: false, foreign_key: true
 
       t.timestamps
     end

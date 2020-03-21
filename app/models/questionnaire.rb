@@ -1,12 +1,8 @@
 class Questionnaire < ApplicationRecord
-  # has_one :browser_location
-  # belongs_to :browser_location
-
-  # accepts_nested_attributes_for :browser_location
-
+  validates_presence_of :latitude, :longitude, :accuracy
   validates :healthy, :tested, :fever, :cough,
             inclusion: { in: [true, false] }
-  validates_presence_of :latitude, :longitude, :accuracy
+  validates_length_of :other_symptoms, minimum: 0, maximum: 255, allow_blank: true
 
   def to_feature
     {
