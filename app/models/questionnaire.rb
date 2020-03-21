@@ -10,7 +10,8 @@ class Questionnaire < ApplicationRecord
 
   def self.sliding_window
     Rails.cache.fetch("questionnaires/sliding_window", expires_in: 5.minutes) do
-      where("created_at > ?", Rails.configuration.sliding_window.ago)
+      select("DISTINCT ON (client_uuid) client_uuid, *")
+        .where("created_at > ?", Rails.configuration.sliding_window.ago)
     end
   end
 

@@ -4,10 +4,10 @@ one:
   heatmap: one
   latitude: 1.5
   longitude: 1.5
-  value: 1.5
+  percentage_sick: 0.5
 
 two:
   heatmap: two
   latitude: 1.5
   longitude: 1.5
-  value: 1.5
+  percentage_sick: 0.5

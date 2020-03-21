@@ -11,7 +11,6 @@ class Heatmap < ApplicationRecord
                           data_starts_at: data_starts_at,
                           data_ends_at: data_ends_at)
 
-    # TODO: Use the client_uuid and only use most recent value
     Questionnaire.sliding_window.each do |questionnaire|
       if percentage_sick = questionnaire.nearby_sick_percentage(radius_km: radius_km)
         HeatmapValue.create!(heatmap: heatmap,
