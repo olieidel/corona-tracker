@@ -75,6 +75,7 @@ GEM
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
     crass (1.0.6)
+    elif (0.1.0)
     erubi (1.9.0)
     ffi (1.12.2)
     geocoder (1.6.2)
@@ -162,9 +163,13 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    scout (5.9.13)
+      elif
+      server_metrics (>= 1.2.18)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    server_metrics (1.2.18)
     sidekiq (6.0.5)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -224,6 +229,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   sass-rails (>= 6)
+  scout (~> 5.9, >= 5.9.13)
   selenium-webdriver
   sidekiq (~> 6.0, >= 6.0.5)
   spring
