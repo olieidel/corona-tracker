@@ -1,8 +1,6 @@
 import { Controller } from "stimulus";
 import mapboxgl from 'mapbox-gl';
 
-// Hm, maybe importing the mapbox css here works?
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default class extends Controller {
   static targets = ['map'];

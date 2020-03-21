@@ -22,4 +22,7 @@ require('stylesheets/application.scss');
 // Stimulus
 import "controllers";
 
+// Mapbox CSS
+require('mapbox-gl/dist/mapbox-gl.css');
+
 global.$ = require('jquery');
