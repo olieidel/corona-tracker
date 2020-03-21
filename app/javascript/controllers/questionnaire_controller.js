@@ -103,12 +103,12 @@ export default class extends Controller {
 
   anonymizePosition(position) {
     // (1 / 110574) is one kilometer
-    // Multiple with a random number between -10 and +10
-    let kilometerRadius = 10;
-    let latitudeNoise = (Math.random() - 0.5) * (1 / 110574) * kilometerRadius;
+    // Multiply with a random number between -2 and +2
+    let kilometerRadius = 2;
+    let latitudeNoise = (Math.random() - 0.5) * (1 / 110.574) * kilometerRadius;
 
     // (1 / 71952) is approx. one kilometer in longitude in Germany
-    let longitudeNoise = (Math.random() - 0.5) * (1 / 71952) * kilometerRadius;
+    let longitudeNoise = (Math.random() - 0.5) * (1 / 71.952) * kilometerRadius;
 
     return {
       latitude: position.coords.latitude + latitudeNoise,

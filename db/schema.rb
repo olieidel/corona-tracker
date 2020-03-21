@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_140432) do
     t.float "accuracy", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["latitude", "longitude"], name: "index_questionnaires_on_latitude_and_longitude"
   end
 
 end

@@ -10,10 +10,12 @@ class CreateQuestionnaires < ActiveRecord::Migration[6.0]
 
       t.float :latitude,                           null: false
       t.float :longitude,                          null: false
-      t.text   :address,                           null: true
+      t.text :address,                             null: true
       t.float :accuracy,                           null: false
 
       t.timestamps
     end
+
+    add_index :questionnaires, [:latitude, :longitude]
   end
 end
