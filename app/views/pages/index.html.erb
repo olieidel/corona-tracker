@@ -1,45 +1,58 @@
 <div class="w-full h-screen">
   <div id="map" class="absolute top-0 w-full h-screen" data-controller="map"></div>
-  <div class="map-overlay z-10 absolute top-0 right-0 p-4 w-1/3 text-black leading-tight rounded rounded-t-none rounded-r-none shadow-xl" data-controller="questionnaire">
+  <div class="map-overlay z-10 absolute top-0 right-0 p-4 w-full sm:w-1/2 lg:w-1/3 text-black leading-tight rounded-bl shadow-xl" data-controller="questionnaire">
+    <button class="map-overlay absolute top-0 left-0 -ml-5 w-5 h-20 text-gray-800 hover:text-white hover:bg-gray-500 rounded-l-md" data-action="questionnaire#hide" data-target="questionnaire.hideButton">
+      <%= inline_svg_tag "menu-right.svg", class: "fill-current w-6 h-6" %>
+    </button>
+
+    <button class="absolute top-0 left-0 w-5 h-full text-gray-800 hover:text-white hover:bg-gray-500 rounded-bl" data-action="questionnaire#show" data-target="questionnaire.showButton" style="display:none">
+      <%= inline_svg_tag "menu-left.svg", class: "fill-current w-6 h-6" %>
+    </button>
+
     <header class="mt-1 text-center">
       <h1 class="text-2xl uppercase tracking-wider text-gray-700 leading-tight">Crowd COVID-19</h1>
     </header>
 
-    <section class="leading-tight mt-8" data-target="questionnaire.introduction">
-      <h3 class="uppercase text-base text-black tracking-wider">Worum geht's?</h3>
-      <section class="text-sm text-gray-800">
-        <p class="mt-1">Bei neu erkrankten Menschen kann es bis zu 10 Tage dauern, bis die Tests ausgewertet und die Ergebnisse beim RKI eingegangen sind.</p>
-        <p class="mt-1">Wir brauchen aber Daten in Echtzeit, um schnell sinnvolle Gegenmaßnahmen einleiten zu können.</p>
+    <section data-target="questionnaire.container">
+      <section class="leading-tight mt-8" data-target="questionnaire.introduction">
+        <h3 class="uppercase text-base text-black tracking-wider">Worum geht's?</h3>
+        <section class="text-sm text-gray-800">
+          <p class="mt-1">Bei neu erkrankten Menschen kann es bis zu 10 Tage dauern, bis die Tests ausgewertet und die Ergebnisse beim RKI eingegangen sind.</p>
+          <p class="mt-1">Wir brauchen aber Daten in Echtzeit, um schnell sinnvolle Gegenmaßnahmen einleiten zu können.</p>
+        </section>
+        <h3 class="mt-6 uppercase text-base text-black tracking-wider">Hilf mit!</h3>
+        <section class="text-sm text-gray-800">
+          <p class="mt-1">Du kannst helfen, indem Du angibst, wie es dir geht und wo du bist.</p>
+          <p class="mt-1">Deine Ortsdaten werden übertragen und auf einem Radius von 2km anonymisiert.</p>
+        </section>
       </section>
-      <h3 class="mt-6 uppercase text-base text-black tracking-wider">Hilf mit!</h3>
-      <section class="text-sm text-gray-800">
-        <p class="mt-1">Du kannst helfen, indem Du angibst, wie es dir geht und wo du bist.</p>
-        <p class="mt-1">Deine Ortsdaten werden übertragen und auf einem Radius von 2km anonymisiert.</p>
-      </section>
-    </section>
-    <div id="form" class="mt-4">
-      <%= render "questionnaires/form", questionnaire: @questionnaire %>
-    </div>
-    <div id="success" class="mt-4" style="display:none">
-      <h3 class="mt-6 uppercase text-base text-black tracking-wider">Danke!</h3>
-      <div class="mt-2 text-gray-800 text-sm">
-        <p>Deine Daten tragen dazu bei, schneller COVID-19 zu bekämpfen.</p>
-        <p class="mt-2">Übrigens, du kannst jederzeit zurückkommen und nochmal Daten beitragen. Da wir immer nur die Daten der letzten 24 Stunden anschauen, schau' am besten jeden Tag vorbei.</p>
-        <p class="mt-2">Falls du weitere Fragen zum Coronavirus hast oder medizinische Hilfe brauchst: Das Gesundheitsministerium hat eine <%= link_to "Webseite", "https://www.bundesgesundheitsministerium.de/coronavirus.html", class: "link", target: "_blank" %> mit allen wichtigen Informationen und Hotlines eingerichtet.</p>
-        <p class="mt-4">Alles Gute!</p>
+
+      <div id="form" class="mt-4">
+        <%= render "questionnaires/form", questionnaire: @questionnaire %>
       </div>
-    </div>
-    <div class="mt-4" data-target="questionnaire.locationError" style="display:none">
-      <h3 class="mt-6 uppercase text-base text-black tracking-wider">Ortungsfehler</h3>
-      <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorPermissionDenied" style="display:none">
-        Du hast dich entschieden, deinen Ort nicht zu übermitteln. Damit kannst du leider keine Daten beitragen.
-      </p>
-      <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorPositionUnavailable" style="display:none">
-        Es hat leider nicht geklappt, deinen Ort zu übertragen. Versuch's vielleicht später nochmal.
-      </p>
-      <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorTimeout" style="display:none">
-        Es hat leider nicht geklappt, deinen Ort zu übertragen. Versuch's vielleicht später nochmal.
-      </p>
-    </div>
+
+      <div id="success" class="mt-4" style="display:none">
+        <h3 class="mt-6 uppercase text-base text-black tracking-wider">Danke!</h3>
+        <div class="mt-2 text-gray-800 text-sm">
+          <p>Deine Daten tragen dazu bei, schneller COVID-19 zu bekämpfen.</p>
+          <p class="mt-2">Übrigens, du kannst jederzeit zurückkommen und nochmal Daten beitragen. Da wir immer nur die Daten der letzten 24 Stunden anschauen, schau' am besten jeden Tag vorbei.</p>
+          <p class="mt-2">Falls du weitere Fragen zum Coronavirus hast oder medizinische Hilfe brauchst: Das Gesundheitsministerium hat eine <%= link_to "Webseite", "https://www.bundesgesundheitsministerium.de/coronavirus.html", class: "link", target: "_blank" %> mit allen wichtigen Informationen und Hotlines eingerichtet.</p>
+          <p class="mt-4">Alles Gute!</p>
+        </div>
+      </div>
+
+      <div class="mt-4" data-target="questionnaire.locationError" style="display:none">
+        <h3 class="mt-6 uppercase text-base text-black tracking-wider">Ortungsfehler</h3>
+        <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorPermissionDenied" style="display:none">
+          Du hast dich entschieden, deinen Ort nicht zu übermitteln. Damit kannst du leider keine Daten beitragen.
+        </p>
+        <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorPositionUnavailable" style="display:none">
+          Es hat leider nicht geklappt, deinen Ort zu übertragen. Versuch's vielleicht später nochmal.
+        </p>
+        <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorTimeout" style="display:none">
+          Es hat leider nicht geklappt, deinen Ort zu übertragen. Versuch's vielleicht später nochmal.
+        </p>
+      </div>
+    </section>
   </div>
 </div>

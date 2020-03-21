@@ -10,12 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_140432) do
+ActiveRecord::Schema.define(version: 2020_03_21_185205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  create_table "heatmap_values", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "heatmap_id", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.float "percentage_sick", null: false
+    t.index ["heatmap_id"], name: "index_heatmap_values_on_heatmap_id"
+    t.index ["latitude", "longitude"], name: "index_heatmap_values_on_latitude_and_longitude"
+  end
+
+  create_table "heatmaps", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.float "radius_km", null: false
+    t.datetime "data_starts_at", null: false
+    t.datetime "data_ends_at", null: false
+    t.boolean "simulated", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "questionnaires", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "client_uuid", null: false
@@ -28,9 +46,11 @@ ActiveRecord::Schema.define(version: 2020_03_06_140432) do
     t.float "longitude", null: false
     t.text "address"
     t.float "accuracy", null: false
+    t.boolean "simulated", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["latitude", "longitude"], name: "index_questionnaires_on_latitude_and_longitude"
   end
 
+  add_foreign_key "heatmap_values", "heatmaps"
 end

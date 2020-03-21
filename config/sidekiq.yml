@@ -1,0 +1,20 @@
+---
+:verbose: false
+:concurrency: 10
+:timeout: 8
+
+# https://mikerogers.io/2019/06/06/rails-6-sidekiq-queues.html
+:queues:
+  - corona_default
+  - corona_mailers
+  - corona_action_mailbox_routing
+  - corona_action_mailbox_incineration
+  - corona_active_storage_analysis
+  - corona_active_storage_purge
+
+development:
+  :verbose: true
+production:
+  :concurrency: 15
+staging:
+  :concurrency: 15

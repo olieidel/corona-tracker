@@ -45,7 +45,8 @@ def create_entry(healthy: random_boolean, latitude: random_latitude, longitude: 
     client_uuid: SecureRandom.uuid,
     latitude: latitude,
     longitude: longitude,
-    accuracy: rand(100)
+    accuracy: rand(100),
+    simulated: true
   )
 
   questionnaire.save
@@ -87,3 +88,5 @@ end
 
 create_clusters
 create_others
+
+GenerateHeatmapJob.perform_now

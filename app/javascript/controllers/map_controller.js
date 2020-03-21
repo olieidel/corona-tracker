@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ['map'];
 
   connect() {
-    this.renderMap();
+    // this.renderMap();
   }
 
   renderMap() {
@@ -21,30 +21,30 @@ export default class extends Controller {
       // Add a new source from our GeoJSON data and
       // set the 'cluster' option to true. GL-JS will
       // add the point_count property to your source data.
-      map.addSource('earthquakes', {
+      map.addSource('questionnaires', {
         type: 'geojson',
-        // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
-        // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-        /* data: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson', */
-        // data: JSON.parse(document.getElementById('map').dataset.questionnaires),
         data: '/questionnaires.json',
         // cluster: true,
         // clusterMaxZoom: 14, // Max zoom to cluster points on
         // clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
       });
+      map.addSource('heatmap', {
+        type: 'geojson',
+        data: '/heatmap.json',
+      });
 
       map.addLayer(
         {
-          'id': 'earthquakes-heat',
+          'id': 'heatmap-percentage-sick',
           'type': 'heatmap',
-          'source': 'earthquakes',
+          'source': 'heatmap',
           'paint': {
             'heatmap-weight': [
               'interpolate',
               ['linear'],
               [
                 'get',
-                'sick_percentage_in_5km_radius'
+                'percentage_sick'
               ],
               0,
               0,
@@ -100,9 +100,9 @@ export default class extends Controller {
 
       map.addLayer(
         {
-          'id': 'earthquakes-point',
+          'id': 'questionnaire-points',
           'type': 'circle',
-          'source': 'earthquakes',
+          'source': 'questionnaires',
           'paint': {
             'circle-radius': [
               'interpolate',

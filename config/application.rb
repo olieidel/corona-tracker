@@ -16,5 +16,7 @@ module Corona
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.mapbox_public_key = "pk.eyJ1Ijoib2xpZWlkZWwiLCJhIjoiY2s3Z2J1bG1lMDlidjNtbzI1MGVlM3czOCJ9.fAXDKOEHx_USnDXah1iENw"
+
+    config.sliding_window = 24.hours
   end
 end

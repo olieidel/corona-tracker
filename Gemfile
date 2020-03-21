@@ -54,8 +54,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'activerecord-postgis-adapter', '~> 6.0'
+# Sidekiq
+# https://github.com/mperham/sidekiq/
+gem 'sidekiq', '~> 6.0', '>= 6.0.5'
 
 # Maybe a better API for storing lat lng locations and doing nearby queries?
 # rubygeocoder.com
 gem 'geocoder', '~> 1.6', '>= 1.6.2'
+
+# Inline SVGs
+# https://github.com/jamesmartin/inline_svg/
+gem 'inline_svg', '~> 1.7', '>= 1.7.1'
