@@ -16,7 +16,7 @@
 }
 
 .select-button {
-  @apply h-16 w-full p-2 border border-gray-600 rounded;
+  @apply text-base h-16 w-full p-2 border border-gray-600 rounded;
 
   &:hover {
     @apply bg-gray-200;
