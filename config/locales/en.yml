@@ -33,7 +33,7 @@ en:
   modal_title: Crowd COVID-19
 
   introduction:
-    beta_test: Beta-Test - simulated data
+    beta_test: Test mode - partially simulated data
     whats_it_about: How does it work?
     problem_explanation: When people contract the disease, it can take up to 10 days for their tests to be completed and their data being submitted to the authorities.
     solution_explanation: We however need real-time data to act faster.
