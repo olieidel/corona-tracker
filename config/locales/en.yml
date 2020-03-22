@@ -30,4 +30,41 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  modal_title: Crowd COVID-19
+
+  introduction:
+    beta_test: Beta-Test - simulated data
+    whats_it_about: How does it work?
+    problem_explanation: When people contract the disease, it can take up to 10 days for their tests to be completed and their data being submitted to the authorities.
+    solution_explanation: We however need real-time data to act faster.
+    help_out: Contribute
+    help_out_how: "You can contribute by providing data on how you're feeling and where you are."
+    location_anonymization_hint: Your location data will be submitted and anonymized within a radius of 2 km.
+
+  questionnaire:
+    i_am_healthy: I am healthy
+    i_am_sick: I am sick
+    i_have_a_fever: Ich have a fever.
+    i_have_a_cough: Ich have a cough.
+    enter_other_symptoms_if_you_have_them: "Enter additional symptoms if you have any:"
+    enter_other_symptoms_here: Enter additional symptoms here
+    did_covid_test_positive: "Optional: I've done a COVID-19 test and it's positive (sick)."
+    did_covid_test_negative: "Optional: I've done a COVID-19 test and it's negative (healthy)."
+    submit: Submit
+
+  success:
+    thanks: Thanks!
+    explanation: Your data helps fight COVID-19 faster.
+    come_back: Did you know? You can come back any time and submit data again. As we only display the data of the past 24 hours, please check in at least daily.
+    link_to_authorities_html: "If you have further questions about the Coronavirus or seek medical attention, check the website of the authorities in your country, e.g. the %{link}."
+    authority: CDC
+    authority_link: "https://www.cdc.gov/coronavirus/2019-ncov/index.html"
+    all_the_best: Stay safe!
+
+  location_error:
+    title: Location Error
+    permission: "You've declined permission for location services. Unfortunately, you can't provide any data then."
+    other: "Getting your location didn't work. Maybe try again later?"
+
+  footer:
+    project_by: By Oliver Eidel

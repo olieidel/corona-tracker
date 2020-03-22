@@ -58,6 +58,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # https://github.com/mperham/sidekiq/
 gem 'sidekiq', '~> 6.0', '>= 6.0.5'
 
+# Infer locale from HTTP Accept-Language header
+# https://github.com/iain/http_accept_language/
+gem 'http_accept_language', '~> 2.1', '>= 2.1.1'
+
 # Scout Monitoring
 gem 'scout_apm', '~> 2.6', '>= 2.6.7'
 

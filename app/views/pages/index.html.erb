@@ -10,24 +10,24 @@
     </button>
 
     <header class="bg-orange-500 mb-4 px-2 py-3 text-center font-light text-sm text-gray-700 tracking-wider uppercase leading-tight">
-      Beta-Test - simulierte Daten
+      <%= t "introduction.beta_test" %>
     </header>
 
     <header class="mt-1 text-center">
-      <h1 class="text-2xl uppercase tracking-wider text-gray-700 leading-tight">Crowd COVID-19</h1>
+      <h1 class="text-2xl uppercase tracking-wider text-gray-700 leading-tight"><%= t "modal_title" %></h1>
     </header>
 
     <section class="p-4" data-target="questionnaire.container">
       <section class="leading-tight mt-8" data-target="questionnaire.introduction">
-        <h3 class="uppercase text-base text-black tracking-wider">Worum geht's?</h3>
+        <h3 class="uppercase text-base text-black tracking-wider"><%= t "introduction.whats_it_about" %></h3>
         <section class="text-sm text-gray-800">
-          <p class="mt-1">Bei neu erkrankten Menschen kann es bis zu 10 Tage dauern, bis die Tests ausgewertet und die Ergebnisse beim RKI eingegangen sind.</p>
-          <p class="mt-1">Wir brauchen aber Daten in Echtzeit, um schnell sinnvolle Gegenmaßnahmen einleiten zu können.</p>
+          <p class="mt-1"><%= t "introduction.problem_explanation" %></p>
+          <p class="mt-1"><%= t "introduction.solution_explanation" %></p>
         </section>
-        <h3 class="mt-6 uppercase text-base text-black tracking-wider">Hilf mit!</h3>
+        <h3 class="mt-6 uppercase text-base text-black tracking-wider"><%= t "introduction.help_out" %></h3>
         <section class="text-sm text-gray-800">
-          <p class="mt-1">Du kannst helfen, indem Du angibst, wie es dir geht und wo du bist.</p>
-          <p class="mt-1">Deine Ortsdaten werden übertragen und auf einem Radius von 2km anonymisiert.</p>
+          <p class="mt-1"><%= t "introduction.help_out_how" %></p>
+          <p class="mt-1"><%= t "introduction.location_anonymization_hint" %></p>
         </section>
       </section>
 
@@ -36,31 +36,31 @@
       </div>
 
       <div id="success" class="mt-4" style="display:none">
-        <h3 class="mt-6 uppercase text-base text-black tracking-wider">Danke!</h3>
+        <h3 class="mt-6 uppercase text-base text-black tracking-wider"><%= t "success.thanks" %></h3>
         <div class="mt-2 text-gray-800 text-sm">
-          <p>Deine Daten tragen dazu bei, schneller COVID-19 zu bekämpfen.</p>
-          <p class="mt-2">Übrigens, du kannst jederzeit zurückkommen und nochmal Daten beitragen. Da wir immer nur die Daten der letzten 24 Stunden anschauen, schau' am besten jeden Tag vorbei.</p>
-          <p class="mt-2">Falls du weitere Fragen zum Coronavirus hast oder medizinische Hilfe brauchst: Das Gesundheitsministerium hat eine <%= link_to "Webseite", "https://www.bundesgesundheitsministerium.de/coronavirus.html", class: "link", target: "_blank" %> mit allen wichtigen Informationen und Hotlines eingerichtet.</p>
-          <p class="mt-4">Alles Gute!</p>
+          <p><%= t "success.explanation" %></p>
+          <p class="mt-2"><%= t "success.come_back" %></p>
+          <p class="mt-2"><%= t "success.link_to_authorities_html", link: link_to(t("success.authority"), t("success.authority_link"), class: "link", target: "_blank") %></p>
+          <p class="mt-4"><%= t "success.all_the_best" %></p>
         </div>
       </div>
 
       <div class="mt-4" data-target="questionnaire.locationError" style="display:none">
-        <h3 class="mt-6 uppercase text-base text-black tracking-wider">Ortungsfehler</h3>
+        <h3 class="mt-6 uppercase text-base text-black tracking-wider"><%= t "location_error.title" %></h3>
         <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorPermissionDenied" style="display:none">
-          Du hast dich entschieden, deinen Ort nicht zu übermitteln. Damit kannst du leider keine Daten beitragen.
+          <%= t "location_error.permission" %>
         </p>
         <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorPositionUnavailable" style="display:none">
-          Es hat leider nicht geklappt, deinen Ort zu übertragen. Versuch's vielleicht später nochmal.
+          <%= t "location_error.other" %>
         </p>
         <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorTimeout" style="display:none">
-          Es hat leider nicht geklappt, deinen Ort zu übertragen. Versuch's vielleicht später nochmal.
+          <%= t "location_error.other" %>
         </p>
       </div>
     </section>
 
     <footer class="flex justify-end pr-4 pb-2 text-xs text-gray-700" data-target="questionnaire.footer">
-      <%= link_to "Ein Projekt von Oliver Eidel", "https://www.eidel.io", class: "hover:text-black", target: "_blank" %>
+      <%= link_to t("footer.project_by"), "https://www.eidel.io", class: "hover:text-black", target: "_blank" %>
       <%= link_to "GitHub", "https://github.com/olieidel/corona-tracker", class: "ml-4 hover:text-black", target: "_blank" %>
     </footer>
   </div>

@@ -1,0 +1,39 @@
+de:
+  modal_title: Crowd COVID-19
+
+  introduction:
+    beta_test: Beta-Test - simulierte Daten
+    whats_it_about: "Worum geht's?"
+    problem_explanation: Bei neu erkrankten Menschen kann es bis zu 10 Tage dauern, bis die Tests ausgewertet und die Ergebnisse beim RKI eingegangen sind.
+    solution_explanation: Wir brauchen aber Daten in Echtzeit, um schnell sinnvolle Gegenmaßnahmen einleiten zu können.
+    help_out: Hilf mit!
+    help_out_how: Du kannst helfen, indem Du angibst, wie es dir geht und wo du bist.
+    location_anonymization_hint: Deine Ortsdaten werden übertragen und auf einem Radius von 2km anonymisiert.
+
+  questionnaire:
+    i_am_healthy: Ich bin gesund
+    i_am_sick: Ich bin krank
+    i_have_a_fever: Ich habe Fieber.
+    i_have_a_cough: Ich habe Husten.
+    enter_other_symptoms_if_you_have_them: "Falls du weitere Symptome hast, gib sie hier ein:"
+    enter_other_symptoms_here: Weitere Symptome hier eintragen
+    did_covid_test_positive: "Optional: Ich habe einen COVID-19 Test gemacht und er ist positiv (krank)."
+    did_covid_test_negative: "Optional: Ich habe einen COVID-19 Test gemacht und er ist negativ (gesund)."
+    submit: Abschicken
+
+  success:
+    thanks: Danke!
+    explanation: Deine Daten tragen dazu bei, schneller COVID-19 zu bekämpfen.
+    come_back: Übrigens, du kannst jederzeit zurückkommen und nochmal Daten beitragen. Da wir immer nur die Daten der letzten 24 Stunden anschauen, schau' am besten jeden Tag vorbei.
+    link_to_authorities_html: "Falls du weitere Fragen zum Coronavirus hast oder medizinische Hilfe brauchst: Auf der Webseite vom %{link} findest du alle wichtigen Informationen und Hotlines."
+    authority: Gesundheitsministerium
+    authority_link: "https://www.bundesgesundheitsministerium.de/coronavirus.html"
+    all_the_best: Alles Gute!
+
+  location_error:
+    title: Ortungsfehler
+    permission: Du hast dich entschieden, deinen Ort nicht zu übermitteln. Damit kannst du leider keine Daten beitragen.
+    other: Es hat leider nicht geklappt, deinen Ort zu übertragen. Versuch's vielleicht später nochmal.
+
+  footer:
+    project_by: Ein Projekt von Oliver Eidel
