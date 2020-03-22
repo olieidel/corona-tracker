@@ -24,7 +24,7 @@ de:
   success:
     thanks: Danke!
     explanation: Deine Daten tragen dazu bei, schneller COVID-19 zu bekämpfen.
-    come_back: Übrigens, du kannst jederzeit zurückkommen und nochmal Daten beitragen. Da wir immer nur die Daten der letzten 24 Stunden anschauen, schau' am besten jeden Tag vorbei.
+    come_back: Übrigens, du kannst jederzeit zurückkommen und nochmal Daten beitragen. Da wir immer nur die Daten der letzten 72 Stunden anschauen, schau' am besten jeden Tag vorbei.
     link_to_authorities_html: "Falls du weitere Fragen zum Coronavirus hast oder medizinische Hilfe brauchst: Auf der Webseite vom %{link} findest du alle wichtigen Informationen und Hotlines."
     authority: Gesundheitsministerium
     authority_link: "https://www.bundesgesundheitsministerium.de/coronavirus.html"
