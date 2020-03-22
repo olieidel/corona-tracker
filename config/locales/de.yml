@@ -2,7 +2,6 @@ de:
   modal_title: Crowd COVID-19
 
   introduction:
-    beta_test: Testbetrieb - teilweise simulierte Daten
     whats_it_about: "Worum geht's?"
     problem_explanation: Bei neu erkrankten Menschen kann es bis zu 10 Tage dauern, bis die Tests ausgewertet und die Ergebnisse beim RKI eingegangen sind.
     solution_explanation: Wir brauchen aber Daten in Echtzeit, um schnell sinnvolle Gegenmaßnahmen einleiten zu können.

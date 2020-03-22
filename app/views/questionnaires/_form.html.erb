@@ -1,5 +1,5 @@
 <%= form_with(model: questionnaire, local: false, data: { target: "questionnaire.form" }) do |form| %>
-  <section class="mx-auto max-w-lg flex" data-target="questionnaire.healthySickSelector">
+  <section class="mt-2 mx-auto max-w-lg flex" data-target="questionnaire.healthySickSelector">
     <div class="w-1/2 pr-1">
       <button class="select-button" data-action="questionnaire#selectHealthy"><%= t "questionnaire.i_am_healthy" %></button>
     </div>
@@ -9,7 +9,7 @@
   </section>
 
   <section class="mx-auto max-w-lg leading-tight" data-target="questionnaire.sickSelector" style="display:none">
-    <h3 class="mt-6 uppercase text-base text-black tracking-wider"><%= t "questionnaire.i_am_sick" %>.</h3>
+    <h3 class="uppercase text-base text-black tracking-wider"><%= t "questionnaire.i_am_sick" %>.</h3>
     <div class="mt-2 text-sm text-gray-800">
       <%= form.check_box :fever, data: { target: "questionnaire.fever" } %>
       <%= form.label :fever, t("questionnaire.i_have_a_fever"), class: "ml-1" %>
@@ -32,7 +32,7 @@
   </section>
 
   <section class="mx-auto max-w-lg leading-tight" data-target="questionnaire.locationHint" style="display:none">
-    <h3 class="mt-6 uppercase text-base text-black tracking-wider"><%= t "questionnaire.i_am_healthy" %>.</h3>
+    <h3 class="uppercase text-base text-black tracking-wider"><%= t "questionnaire.i_am_healthy" %>.</h3>
     <div class="mt-2 text-sm">
       <%= form.check_box :tested, id: "check_box_tested_healthy" %>
       <%= form.label :tested, t("questionnaire.did_covid_test_negative"), class: "ml-1 text-gray-800", for: "check_box_tested_healthy" %>

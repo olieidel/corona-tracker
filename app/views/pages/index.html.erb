@@ -9,16 +9,12 @@
       <%= inline_svg_pack_tag "media/svg/menu-left.svg", class: "fill-current w-6 h-6" %>
     </button>
 
-    <header class="bg-orange-500 mb-4 px-2 py-3 text-center font-light text-sm text-gray-700 tracking-wider uppercase leading-tight">
-      <%= t "introduction.beta_test" %>
-    </header>
-
-    <header class="mt-1 text-center">
+    <header class="my-4 text-center">
       <h1 class="text-2xl uppercase tracking-wider text-gray-700 leading-tight"><%= t "modal_title" %></h1>
     </header>
 
-    <section class="p-4" data-target="questionnaire.container">
-      <section class="leading-tight mt-8" data-target="questionnaire.introduction">
+    <section class="mt-2 p-4" data-target="questionnaire.container">
+      <section class="leading-tight" data-target="questionnaire.introduction">
         <h3 class="uppercase text-base text-black tracking-wider"><%= t "introduction.whats_it_about" %></h3>
         <section class="text-sm text-gray-800">
           <p class="mt-1"><%= t "introduction.problem_explanation" %></p>
@@ -31,12 +27,12 @@
         </section>
       </section>
 
-      <div id="form" class="mt-4">
+      <div id="form">
         <%= render "questionnaires/form", questionnaire: @questionnaire %>
       </div>
 
-      <div id="success" class="mt-4" style="display:none">
-        <h3 class="mt-6 uppercase text-base text-black tracking-wider"><%= t "success.thanks" %></h3>
+      <div id="success" style="display:none">
+        <h3 class="uppercase text-base text-black tracking-wider"><%= t "success.thanks" %></h3>
         <div class="mt-2 text-gray-800 text-sm">
           <p><%= t "success.explanation" %></p>
           <p class="mt-2"><%= t "success.come_back" %></p>
@@ -45,8 +41,8 @@
         </div>
       </div>
 
-      <div class="mt-4" data-target="questionnaire.locationError" style="display:none">
-        <h3 class="mt-6 uppercase text-base text-black tracking-wider"><%= t "location_error.title" %></h3>
+      <div data-target="questionnaire.locationError" style="display:none">
+        <h3 class="uppercase text-base text-black tracking-wider"><%= t "location_error.title" %></h3>
         <p class="mt-2 text-gray-800 text-sm" data-target="questionnaire.locationErrorPermissionDenied" style="display:none">
           <%= t "location_error.permission" %>
         </p>
