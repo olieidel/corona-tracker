@@ -93,6 +93,8 @@ export default class extends Controller {
     function doDisable(button) {
       $(button).prop('disabled', true);
       $(button).prop('value', 'Moment, Ortung läuft noch...');
+      $(button).addClass('text-gray-600');
+      $(button).removeClass('text-black');
       $(button).addClass('cursor-not-allowed');
     }
 
@@ -104,6 +106,8 @@ export default class extends Controller {
     function doEnable(button) {
       $(button).prop('disabled', false);
       $(button).prop('value', 'Abschicken');
+      $(button).removeClass('text-gray-600');
+      $(button).addClass('text-black');
       $(button).removeClass('cursor-not-allowed');
     }
 
