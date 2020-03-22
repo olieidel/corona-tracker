@@ -89,4 +89,4 @@ end
 create_clusters
 create_others
 
-GenerateHeatmapJob.perform_now
+GenerateHeatmapJob.perform_now(true)

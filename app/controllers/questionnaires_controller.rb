@@ -4,7 +4,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires
   # GET /questionnaires.json
   def index
-    @questionnaires = Questionnaire.sliding_window
+    @questionnaires = Questionnaire.sliding_window(where_simulated: true)
   end
 
   # POST /questionnaires

@@ -8,26 +8,27 @@ class Questionnaire < ApplicationRecord
 
   self.implicit_order_column = "created_at"
 
-  def self.sliding_window
+  def self.sliding_window(where_simulated: false)
     # Ordering could be not returning the newest entry per client in time window
     Rails.cache.fetch("questionnaires/sliding_window", expires_in: 5.minutes) do
       select("DISTINCT ON (client_uuid) client_uuid, *")
+        .where(simulated: where_simulated)
         .where("created_at > ?", Rails.configuration.sliding_window.ago)
         .order("client_uuid, created_at DESC")
     end
   end
 
-  def nearby_sick_percentage(radius_km:)
+  def nearby_sick_percentage(radius_km:, where_simulated:)
     # Using .length because .count is currently broken due to the
     # distinct constraint in the sliding window
-    sick = self.class.sliding_window
+    sick = self.class.sliding_window(where_simulated: where_simulated)
              .near([latitude, longitude], radius_km, units: :km)
-             .where(healthy: false)
+             .where(healthy: false, simulated: where_simulated)
              .where.not(id: id)
              .length
-    healthy = self.class.sliding_window
+    healthy = self.class.sliding_window(where_simulated: where_simulated)
                 .near([latitude, longitude], radius_km, units: :km)
-                .where(healthy: true)
+                .where(healthy: true, simulated: where_simulated)
                 .where.not(id: id)
                 .length
 
