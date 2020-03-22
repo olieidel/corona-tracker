@@ -14,7 +14,13 @@
     <% if Rails.env.production? %>
       <%= render "shared/analytics" %>
     <% end %>
+
+    <meta property="og:title" content="CrowdCovid"/>
+    <meta property="og:image" content="<%= image_url "social-media-preview.jpg" %>" />
+    <meta property="og:description" content="Crowdsourcing COVID-19 Data." />
+    <meta property="og:url" content="https://www.crowdcovid.com" />
   </head>
+
 
   <body class="bg-black">
     <%= yield %>
