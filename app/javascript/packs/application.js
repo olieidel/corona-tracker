@@ -24,3 +24,7 @@ import "controllers";
 
 // jQuery
 global.$ = require('jquery');
+
+// SVGs
+require('svg/menu-right.svg');
+require('svg/menu-left.svg');
