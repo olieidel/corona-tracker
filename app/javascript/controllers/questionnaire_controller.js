@@ -3,7 +3,7 @@ import $ from 'jquery';
 import Rails from '@rails/ujs';
 
 export default class extends Controller {
-  static targets = ['hideButton', 'showButton', 'container', 'introduction', 'form', 'healthySickSelector', 'sickSelector',
+  static targets = ['hideButton', 'showButton', 'container', 'footer', 'introduction', 'form', 'healthySickSelector', 'sickSelector',
                     'submitButtonHealthy', 'submitButtonSick',
                     'locationHint', 'healthy', 'fever', 'cough', 'longitude', 'latitude', 'accuracy',
                     'locationError', 'locationErrorPermissionDenied', 'locationErrorPositionUnavailable',
@@ -13,12 +13,14 @@ export default class extends Controller {
 
   hide() {
     $(this.containerTarget).hide();
+    $(this.footerTarget).hide();
     $(this.hideButtonTarget).hide();
     $(this.showButtonTarget).show();
   }
 
   show() {
     $(this.containerTarget).show();
+    $(this.footerTarget).show();
     $(this.hideButtonTarget).show();
     $(this.showButtonTarget).hide();
   }
