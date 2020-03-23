@@ -43,8 +43,8 @@ en:
   questionnaire:
     i_am_healthy: I am healthy
     i_am_sick: I am sick
-    i_have_a_fever: Ich have a fever.
-    i_have_a_cough: Ich have a cough.
+    i_have_a_fever: I have a fever.
+    i_have_a_cough: I have a cough.
     enter_other_symptoms_if_you_have_them: "Enter additional symptoms if you have any:"
     enter_other_symptoms_here: Enter additional symptoms here
     did_covid_test_positive: "Optional: I've done a COVID-19 test and it's positive (sick)."
