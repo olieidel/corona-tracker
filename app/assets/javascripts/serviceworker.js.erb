@@ -1,0 +1,40 @@
+function onPush(event) {
+  const data = event.data.json();
+  const { action, title, body } = event.data.json();
+
+  const opts = {
+    body: data.body,
+    badge: '/android-chrome-192x192.png',
+    icon: '/android-chrome-192x192.png',
+  };
+
+  if (data.action) {
+    opts.actions = [{ action: "",
+                      title: data.action.title,
+                      icon: '/android-chrome-192x192.png'}];
+    opts.data = { href: data.action.href };
+    opts.requireInteraction = true;
+  }
+
+  console.log(opts)
+
+  event.waitUntil(
+    self.registration.showNotification(title, opts)
+  )
+}
+
+function onNotificationClick(event) {
+  var notification = event.notification;
+
+  notification.close();
+
+  // data is also passed through notification
+  // Example: 'https://www.crowdcovid.com'
+  var openUrl = notification.data.href;
+
+  if (clients.openWindow)
+    return clients.openWindow(openUrl);
+}
+
+self.addEventListener('push', onPush);
+self.addEventListener('notificationclick', onNotificationClick);

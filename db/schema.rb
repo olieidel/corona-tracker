@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_21_185205) do
+ActiveRecord::Schema.define(version: 2020_03_22_223607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(version: 2020_03_21_185205) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["latitude", "longitude"], name: "index_questionnaires_on_latitude_and_longitude"
+  end
+
+  create_table "web_push_subscribers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.string "endpoint", null: false
+    t.string "p256dh", null: false
+    t.string "auth", null: false
+    t.datetime "expires_at"
+    t.datetime "unsubscribed_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["endpoint"], name: "index_web_push_subscribers_on_endpoint", unique: true
   end
 
   add_foreign_key "heatmap_values", "heatmaps"

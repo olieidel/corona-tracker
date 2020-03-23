@@ -34,7 +34,10 @@
       <div id="success" style="display:none">
         <h3 class="uppercase text-base text-black tracking-wider"><%= t "success.thanks" %></h3>
         <div class="mt-2 text-gray-800 text-sm">
-          <p><%= t "success.explanation" %></p>
+          <p><%= t "success.offer_push_notifications" %></p>
+          <div class="mt-2" data-controller="web-push" data-web-push-application-server-key="<%= Rails.application.credentials.vapid_public_key %>">
+            <button class="select-button" data-target="web-push.subscribeButton" data-action="web-push#subscribe"><%= t "success.activate_push" %></button>
+          </div>
           <p class="mt-2"><%= t "success.come_back" %></p>
           <p class="mt-2"><%= t "success.link_to_authorities_html", link: link_to(t("success.authority"), t("success.authority_link"), class: "link", target: "_blank") %></p>
           <p class="mt-4"><%= t "success.all_the_best" %></p>
