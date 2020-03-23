@@ -130,11 +130,18 @@ export default class extends Controller {
               'hsl(0, 100%, 50%)',
               'hsla(0, 0%, 100%, 0)'
             ],
-            'circle-stroke-color': 'hsl(0, 0%, 100%)',
-            'circle-stroke-width': 0,
-            'circle-opacity': 1,
             'circle-stroke-color': 'white',
-            'circle-stroke-width': 1,
+            // tested people have stroke width 2, otherwise 0
+            'circle-stroke-width': [
+              "case",
+              [
+                "==",
+                ["get", "tested"],
+                true
+              ],
+              2,
+              0
+            ],
             'circle-stroke-opacity': 1
           }
         },
