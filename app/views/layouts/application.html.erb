@@ -9,6 +9,9 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <%# Manifest for Push Notifications %>
+    <link rel="manifest" href="<%= asset_path "manifest.json" %>" />
+
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
 
     <% if Rails.env.production? %>
@@ -24,5 +27,6 @@
 
   <body class="bg-black">
     <%= yield %>
+    <div style="display:none" data-controller="service-worker" data-service-worker-application-server-key="<%= Rails.application.credentials.vapid_public_key %>"></div>
   </body>
 </html>

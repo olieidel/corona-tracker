@@ -22,8 +22,9 @@ de:
 
   success:
     thanks: Danke!
-    explanation: Deine Daten tragen dazu bei, schneller COVID-19 zu bekämpfen.
-    come_back: Übrigens, du kannst jederzeit zurückkommen und nochmal Daten beitragen. Da wir immer nur die Daten der letzten 72 Stunden anschauen, schau' am besten jeden Tag vorbei.
+    offer_push_notifications: Wenn du möchtest, benachrichtigen wir dich bei neuen COVID-Fällen in deiner Gegend. Klicke dazu einfach unten auf den Button.
+    activate_push: Push-Benachrichtigungen aktivieren
+    come_back: Du kannst übrigens jederzeit vorbeischauen und mehr Daten beitragen.
     link_to_authorities_html: "Falls du weitere Fragen zum Coronavirus hast oder medizinische Hilfe brauchst: Auf der Webseite vom %{link} findest du alle wichtigen Informationen und Hotlines."
     authority: Gesundheitsministerium
     authority_link: "https://www.bundesgesundheitsministerium.de/coronavirus.html"

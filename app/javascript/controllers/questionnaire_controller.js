@@ -69,8 +69,11 @@ export default class extends Controller {
   setLocation(position) {
     // console.log(position);
     let anonymizedPosition = this.anonymizePosition(position);
-    this.longitudeTarget.value = anonymizedPosition.longitude;
+
+    window.anonymizedPosition = anonymizedPosition;
+
     this.latitudeTarget.value = anonymizedPosition.latitude;
+    this.longitudeTarget.value = anonymizedPosition.longitude;
     this.accuracyTarget.value = position.coords.accuracy;
     this.enableSubmitButtons();
   }

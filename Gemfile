@@ -72,3 +72,9 @@ gem 'geocoder', '~> 1.6', '>= 1.6.2'
 # Inline SVGs
 # https://github.com/jamesmartin/inline_svg/
 gem 'inline_svg', '~> 1.7', '>= 1.7.1'
+
+# Send Web Push Notifications
+gem 'webpush', '~> 1.0'
+
+# Serviceworker, needed for push notifications
+gem 'serviceworker-rails', '~> 0.6.0'

@@ -53,8 +53,9 @@ en:
 
   success:
     thanks: Thanks!
-    explanation: Your data helps fight COVID-19 faster.
-    come_back: Did you know? You can come back any time and submit data again. As we only display the data of the past 72 hours, please check in at least daily.
+    offer_push_notifications: "If you'd like, we'll notify you if there are new COVID-19 cases in your area. Click the button below."
+    activate_push: Activate Push Notifications
+    come_back: You can come back any time to submit more data.
     link_to_authorities_html: "If you have further questions about the Coronavirus or seek medical attention, check the website of the authorities in your country, e.g. the %{link}."
     authority: CDC
     authority_link: "https://www.cdc.gov/coronavirus/2019-ncov/index.html"

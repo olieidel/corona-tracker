@@ -81,6 +81,7 @@ GEM
     geocoder (1.6.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hkdf (0.3.0)
     http_accept_language (2.1.1)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
@@ -89,6 +90,7 @@ GEM
       nokogiri (>= 1.6)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    jwt (2.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -171,6 +173,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    serviceworker-rails (0.6.0)
+      railties (>= 3.1)
     sidekiq (6.0.5)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -208,6 +212,9 @@ GEM
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
+    webpush (1.0.0)
+      hkdf (~> 0.2)
+      jwt (~> 2.0)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -233,6 +240,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   scout_apm (~> 2.6, >= 2.6.7)
   selenium-webdriver
+  serviceworker-rails (~> 0.6.0)
   sidekiq (~> 6.0, >= 6.0.5)
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -241,6 +249,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
+  webpush (~> 1.0)
 
 RUBY VERSION
    ruby 2.6.5p114
