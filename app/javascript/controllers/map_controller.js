@@ -144,10 +144,10 @@ export default class extends Controller {
       map.on('click', 'questionnaire-points', function(e) {
 
         var coordinates = e.features[0].geometry.coordinates.slice();
-        var healthyStr = e.features[0].properties.healthy ? 'Gesunde Person' : 'Kranke Person';
-        var fever = e.features[0].properties.fever ? 'ja' : 'nein';
-        var cough = e.features[0].properties.cough ? 'ja' : 'nein';
-        var tested = e.features[0].properties.tested ? 'ja' : 'nein';
+        var healthyStr = e.features[0].properties.healthy ? 'Healthy Person' : 'Sick Person';
+        var fever = e.features[0].properties.fever ? 'yes' : 'no';
+        var cough = e.features[0].properties.cough ? 'yes' : 'no';
+        var tested = e.features[0].properties.tested ? 'yes' : 'no';
 
         // Ensure that if the map is zoomed out such that
         // multiple copies of the feature are visible, the
@@ -161,11 +161,11 @@ export default class extends Controller {
           .setHTML(`<aside class="leading-tight">
 <h4 class="text-base text-black font-medium tracking-wider uppercase">${healthyStr}</h4>
 <ul class="mt-1 text-sm text-gray-800">
-<li>Fieber: ${fever}</li>
-<li>Husten: ${cough}</li>
-<li>Getestet: ${tested}</li>
+<li>Fever: ${fever}</li>
+<li>Cough: ${cough}</li>
+<li>Tested: ${tested}</li>
 </ul>
-<p class="mt-2 text-gray-600 text-xs tracking-wide">Ort auf 2km anonymisiert</p>
+<p class="mt-2 text-gray-600 text-xs tracking-wide">Location anonymized within 2km</p>
 </aside>`)
           .addTo(map);
       });
