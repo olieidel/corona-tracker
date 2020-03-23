@@ -31,7 +31,7 @@ de:
 
   location_error:
     title: Ortungsfehler
-    permission: Du hast dich entschieden, deinen Ort nicht zu übermitteln. Damit kannst du leider keine Daten beitragen.
+    permission: Du hast dich entschieden, deinen Ort nicht zu übermitteln. Wenn du deine Daten teilen möchtest, schalte bitte Ortungsdienste in deinem Browser an.
     other: Es hat leider nicht geklappt, deinen Ort zu übertragen. Versuch's vielleicht später nochmal.
 
   footer:

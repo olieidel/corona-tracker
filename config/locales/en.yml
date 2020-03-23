@@ -62,7 +62,7 @@ en:
 
   location_error:
     title: Location Error
-    permission: "You've declined permission for location services. Unfortunately, you can't provide any data then."
+    permission: "You've declined permission for location services. If you still want to share your data, please enable your location services in your browser and reload the page."
     other: "Getting your location didn't work. Maybe try again later?"
 
   footer:
