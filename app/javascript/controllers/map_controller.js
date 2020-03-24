@@ -22,7 +22,7 @@ export default class extends Controller {
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/dark-v10',
-      center: [this.initialLatitude, this.initialLongitude],
+      center: [this.initialLongitude, this.initialLatitude],
       zoom: 5
     });
 
