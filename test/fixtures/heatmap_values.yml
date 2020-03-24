@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  heatmap: one
-  latitude: 1.5
-  longitude: 1.5
-  percentage_sick: 0.5
+# one:
+#   heatmap: one
+#   latitude: 1.5
+#   longitude: 1.5
+#   percentage_sick: 0.5
 
-two:
-  heatmap: two
-  latitude: 1.5
-  longitude: 1.5
-  percentage_sick: 0.5
+# two:
+#   heatmap: two
+#   latitude: 1.5
+#   longitude: 1.5
+#   percentage_sick: 0.5

@@ -3,15 +3,13 @@
 one:
   latitude: 1.5
   longitude: 1.5
-  endpoint: MyString
+  endpoint: endpoint1
   p256dh: MyString
   auth: MyString
-  expires_at: 2020-03-22 23:36:07
 
 two:
   latitude: 1.5
   longitude: 1.5
-  endpoint: MyString
+  endpoint: endpoint2
   p256dh: MyString
   auth: MyString
-  expires_at: 2020-03-22 23:36:07
