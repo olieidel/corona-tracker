@@ -34,7 +34,13 @@
       <div id="success" style="display:none">
         <h3 class="uppercase text-base text-black tracking-wider"><%= t "success.thanks" %></h3>
         <div class="mt-2 text-gray-800 text-sm">
-          <p><%= t "success.offer_push_notifications" %></p>
+          <%= link_to "https://wa.me/?text=#{u(t('success.whatsapp_message'))}" do %>
+            <button class="inline-flex items-center p-2 border border-gray-600 hover:bg-gray-200 rounded">
+              <%= inline_svg_pack_tag "media/svg/whatsapp.svg", class: "fill-current w-6 h-6" %>
+              <p class="ml-2"><%= t "success.share_whatsapp" %></p>
+            </button>
+          <% end %>
+          <p class="mt-4"><%= t "success.offer_push_notifications" %></p>
           <div class="mt-2" data-controller="web-push" data-web-push-application-server-key="<%= Rails.application.credentials.vapid_public_key %>">
             <button class="select-button" data-target="web-push.subscribeButton" data-action="web-push#subscribe"><%= t "success.activate_push" %></button>
           </div>

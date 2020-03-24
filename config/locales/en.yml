@@ -53,6 +53,8 @@ en:
 
   success:
     thanks: Thanks!
+    share_whatsapp: Send link to friends
+    whatsapp_message: I just submitted data to crowdcovid.com - you can contribute by telling us how you're feeling!
     offer_push_notifications: "If you'd like, we'll notify you if there are new COVID-19 cases in your area. Click the button below."
     activate_push: Activate Push Notifications
     come_back: You can come back any time to submit more data.
