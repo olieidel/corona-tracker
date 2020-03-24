@@ -3,6 +3,8 @@ class WebPushSubscriber < ApplicationRecord
 
   validates_presence_of :endpoint, :auth, :p256dh, :latitude, :longitude
 
+  self.implicit_order_column = "created_at"
+
   scope :active, -> { where(unsubscribed_at: nil) }
 
   def notify_heartbeat
