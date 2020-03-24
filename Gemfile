@@ -78,3 +78,7 @@ gem 'webpush', '~> 1.0'
 
 # Serviceworker, needed for push notifications
 gem 'serviceworker-rails', '~> 0.6.0'
+
+# maxminddb reader for reading the maxmind ip geolocation db
+# https://github.com/yhirose/maxminddb/
+gem 'maxminddb', '~> 0.1.22'

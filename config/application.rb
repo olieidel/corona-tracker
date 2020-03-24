@@ -11,7 +11,10 @@ module Corona
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    config.autoload_paths << "#{Rails.root}/lib"
+
     config.i18n.available_locales = %w(en de)
+    config.i18n.default_locale = :en
 
     config.assets.precompile += %w[serviceworker.js manifest.json]
 

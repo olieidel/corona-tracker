@@ -9,12 +9,20 @@ export default class extends Controller {
     this.renderMap();
   }
 
+  get initialLatitude() {
+    return parseFloat(this.data.get('initialLatitude'));
+  }
+
+  get initialLongitude() {
+    return parseFloat(this.data.get('initialLongitude'));
+  }
+
   renderMap() {
     mapboxgl.accessToken = 'pk.eyJ1Ijoib2xpZWlkZWwiLCJhIjoiY2s3Z2J1bG1lMDlidjNtbzI1MGVlM3czOCJ9.fAXDKOEHx_USnDXah1iENw';
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/dark-v10',
-      center: [10.4515, 51.1657], // center of Germany (lat, lon)
+      center: [this.initialLatitude, this.initialLongitude],
       zoom: 5
     });
 
