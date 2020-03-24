@@ -26,8 +26,8 @@ import "controllers";
 global.$ = require('jquery');
 
 // SVGs
-require('svg/facebook.svg');
 require('svg/menu-left.svg');
 require('svg/menu-right.svg');
+require('svg/telegram.svg');
 require('svg/twitter.svg');
 require('svg/whatsapp.svg');

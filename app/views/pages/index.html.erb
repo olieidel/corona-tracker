@@ -34,17 +34,33 @@
       <div id="success" style="display:none">
         <h3 class="uppercase text-base text-black tracking-wider"><%= t "success.thanks" %></h3>
         <div class="mt-2 text-gray-800 text-sm">
-          <%= link_to "https://wa.me/?text=#{u(t('success.whatsapp_message'))}" do %>
-            <button class="inline-flex items-center p-2 border border-gray-600 hover:bg-gray-200 rounded">
-              <%= inline_svg_pack_tag "media/svg/whatsapp.svg", class: "fill-current w-6 h-6" %>
-              <p class="ml-2"><%= t "success.share_whatsapp" %></p>
-            </button>
-          <% end %>
-          <p class="mt-4"><%= t "success.offer_push_notifications" %></p>
+          <section>
+            <p><%= t "success.share_title" %></p>
+            <div class="flex mt-2">
+              <%= link_to "https://wa.me/?text=#{u(t('success.share_message'))}", target: "_blank", rel: "nofollow" do %>
+                <button class="inline-flex items-center h-10 pl-2 py-2 pr-3 border border-gray-600 hover:bg-gray-200 rounded">
+                  <%= inline_svg_pack_tag "media/svg/whatsapp.svg", class: "fill-current w-6 h-6" %>
+                  <p class="ml-2 tracking-wide uppercase"><%= t "success.share_button" %></p>
+                </button>
+              <% end %>
+              <%= link_to "https://telegram.me/share/url?url=#{u(root_url)}&text=#{u(t('success.share_message'))}", target: "_blank", rel: "nofollow" do %>
+                <button class="ml-2 fill-current w-10 h-10 p-2 border border-gray-600 hover:bg-gray-200 rounded">
+                  <%= inline_svg_pack_tag "media/svg/telegram.svg", class: "fill-current w-6 h-6" %>
+                </button>
+              <% end %>
+              <%= link_to "http://twitter.com/share?text=#{u(t('success.share_message'))}&url=#{u(root_url)}&hashtags=crowdcovid", target: "_blank", rel: "nofollow" do %>
+                <button class="ml-2 fill-current w-10 h-10 p-2 border border-gray-600 hover:bg-gray-200 rounded">
+                  <%= inline_svg_pack_tag "media/svg/twitter.svg", class: "fill-current w-6 h-6" %>
+                </button>
+              <% end %>
+            </div>
+
+          </section>
+          <p class="mt-6"><%= t "success.offer_push_notifications" %></p>
           <div class="mt-2" data-controller="web-push" data-web-push-application-server-key="<%= Rails.application.credentials.vapid_public_key %>">
             <button class="select-button" data-target="web-push.subscribeButton" data-action="web-push#subscribe"><%= t "success.activate_push" %></button>
           </div>
-          <p class="mt-2"><%= t "success.come_back" %></p>
+          <p class="mt-6"><%= t "success.come_back" %></p>
           <p class="mt-2"><%= t "success.link_to_authorities_html", link: link_to(t("success.authority"), t("success.authority_link"), class: "link", target: "_blank") %></p>
           <p class="mt-4"><%= t "success.all_the_best" %></p>
         </div>

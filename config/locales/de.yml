@@ -22,8 +22,9 @@ de:
 
   success:
     thanks: Danke!
-    share_whatsapp: Link an Freunde schicken
-    whatsapp_message: Ich habe gerade Daten bei crowdcovid.com beigetragen. Hilf auch du, indem du uns sagst, wie es dir geht!
+    share_title: "Mit deinen Freunden teilen:"
+    share_button: Link an Freunde schicken
+    share_message: Ich habe gerade Daten bei crowdcovid.com beigetragen. Dort sieht man, wieviele Leute in deiner Gegend von COVID-19 betroffen sind.
     offer_push_notifications: Wenn du möchtest, benachrichtigen wir dich bei neuen COVID-Fällen in deiner Gegend. Klicke dazu einfach unten auf den Button.
     activate_push: Push-Benachrichtigungen aktivieren
     come_back: Du kannst übrigens jederzeit vorbeischauen und mehr Daten beitragen.
