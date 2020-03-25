@@ -24,7 +24,7 @@ module Corona
     # the framework and any gems in your application.
     config.mapbox_public_key = "pk.eyJ1Ijoib2xpZWlkZWwiLCJhIjoiY2s3Z2J1bG1lMDlidjNtbzI1MGVlM3czOCJ9.fAXDKOEHx_USnDXah1iENw"
 
-    config.sliding_window = 72.hours
+    config.sliding_window = 14.days
     config.default_heatmap_radius_km = 20
   end
 end
