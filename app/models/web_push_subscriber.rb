@@ -7,6 +7,12 @@ class WebPushSubscriber < ApplicationRecord
 
   scope :active, -> { where(unsubscribed_at: nil) }
 
+  def self.notify_all_heartbeat
+    active.each do |subscriber|
+      subscriber.notify_heartbeat
+    end
+  end
+
   def notify_heartbeat
     notify(title: "How are you feeling today?",
            body: "Update your status on CrowdCovid",
