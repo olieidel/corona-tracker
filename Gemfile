@@ -71,7 +71,7 @@ gem 'geocoder', '~> 1.6', '>= 1.6.2'
 
 # Inline SVGs
 # https://github.com/jamesmartin/inline_svg/
-gem 'inline_svg', '~> 1.7', '>= 1.7.1'
+gem 'inline_svg', '~> 1.7'
 
 # Send Web Push Notifications
 gem 'webpush', '~> 1.0'
